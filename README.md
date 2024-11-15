@@ -1,2 +1,2 @@
 # Assignment_Android
-Android Assignments
+Android Assignments: Sem 5 mobile application assignments
