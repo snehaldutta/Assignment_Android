@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".CreateAccountActivity">
+
+    <ImageView
+        android:id="@+id/appImage"
+        android:layout_width="0dp"
+        android:layout_height="260dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/app_image"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signIn"
+        android:text="Get Started"
+        android:textSize="32sp"
+        android:layout_marginTop="190dp"
+        app:layout_constraintTop_toBottomOf="@+id/appImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signInText"
+        android:text="by creating a free account"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/signIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+<!-- Name Design in Material Design
+    <EditText
+        android:id="@+id/nameField"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="60dp"
+        android:padding="10dp"
+        android:hint="Name"
+        app:layout_constraintTop_toBottomOf="@+id/signInText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputNameField"
+        style="@style/custom_input_lay_name"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="35dp"
+        android:hint="Full Name"
+        app:endIconDrawable="@drawable/ic_user"
+        app:endIconMode="custom"
+        app:endIconTint="@color/black"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeWidthFocused="1dp"
+        app:boxStrokeColor="@color/purple"
+        app:boxBackgroundMode="outline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signInText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameInput"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:inputType="textPersonName"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <!-- Valid Email Design in Material Design
+    <EditText
+        android:id="@+id/valEmailField"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:hint="Valid Email"
+        app:layout_constraintTop_toBottomOf="@+id/nameField"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputValEmailField"
+        style="@style/custom_input_lay"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="35dp"
+        android:hint="Email"
+        app:endIconDrawable="@drawable/ic_email"
+        app:endIconMode="custom"
+        app:endIconTint="@color/black"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeWidthFocused="1dp"
+        app:boxStrokeColor="@color/purple"
+        app:boxBackgroundMode="outline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputNameField">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/valEmailInput"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:inputType="textEmailAddress"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <!-- Phone Number Design in Material Design
+    <EditText
+        android:id="@+id/phnField"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:hint="Phone number"
+        app:layout_constraintTop_toBottomOf="@+id/valEmailField"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputPhnField"
+        style="@style/custom_input_lay"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="35dp"
+        android:hint="Phone Number"
+        app:endIconDrawable="@drawable/ic_phn"
+        app:endIconMode="custom"
+        app:endIconTint="@color/black"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeWidthFocused="1dp"
+        app:boxStrokeColor="@color/purple"
+        app:boxBackgroundMode="outline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputValEmailField">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phnInput"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:inputType="phone"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <!-- Strong Password Design in Material Design
+    <EditText
+        android:id="@+id/strnPassField"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:hint="Strong password"
+        app:layout_constraintTop_toBottomOf="@+id/phnField"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputStrPassField"
+        style="@style/custom_input_lay"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="35dp"
+        android:hint="Strong Password"
+        app:endIconDrawable="@drawable/ic_email"
+        app:endIconMode="custom"
+        app:endIconTint="@color/black"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeWidthFocused="1dp"
+        app:boxStrokeColor="@color/purple"
+        app:boxBackgroundMode="outline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputPhnField">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/strPassInput"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:inputType="textEmailAddress"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <CheckBox
+        android:id="@+id/rememBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By checking the box you agree to our Terms and Conditions"
+        android:textSize="10sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/inputStrPassField"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <Button
+        android:id="@+id/logInBtn"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="-90dp"
+        android:layout_marginEnd="32dp"
+        app:flow_horizontalBias="0.0"
+        android:text="Next >"
+        android:textSize="15sp"
+        android:backgroundTint="@color/purple"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/alrMem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-50dp"
+        android:layout_marginStart="110dp"
+        android:text="Already a Member?"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/logMem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-50dp"
+        android:layout_marginStart="5dp"
+        android:text="Log In "
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple"
+        app:layout_constraintStart_toEndOf="@id/alrMem"
+        app:layout_constraintTop_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
