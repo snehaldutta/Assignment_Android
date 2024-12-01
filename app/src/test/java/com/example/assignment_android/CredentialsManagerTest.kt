@@ -68,4 +68,32 @@ class CredentialsManagerTest {
         var isFilledPassword_True = credManager.isPasswordFilled(testPassword)
         assertEquals(true,isFilledPassword_True)
     }
+
+    @Test
+    fun registerNewEmail_thenTrue(){
+        var credManager = CredentialsManager()
+        var testEmail = "te.st@st.com"
+        var testPassword = "pass123"
+        var isNewEmail_True = credManager.register(testEmail,testPassword)
+        assertTrue(isNewEmail_True.isSuccess)
+    }
+
+    @Test
+    fun registerAlreadyTakenEmail_thenFalse(){
+        var credManager = CredentialsManager()
+        var testEmail = "te.st@st.com"
+        var testPassword = "pass123"
+        var isNewEmail_False = credManager.register(testEmail,testPassword)
+        assertFalse(isNewEmail_False.isFailure)
+    }
+
+    @Test
+    fun registerAlreadyTakenEmailCaseInsensitive_thenFalse(){
+        var credManager = CredentialsManager()
+        var testEmail = "TE.ST@St.com"
+        var testPassword = "pass123"
+        credManager.register("te.st@st.com", "pass123")
+        var isNewEmail_False = credManager.register(testEmail,testPassword)
+        assertEquals("Email is already taken", isNewEmail_False.exceptionOrNull()?.message)
+    }
 }
