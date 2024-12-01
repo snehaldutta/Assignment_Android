@@ -1,6 +1,7 @@
 package com.example.assignment_android
 
 class CredentialsManager {
+    val credentials : MutableMap<String,String> = mutableMapOf()
     private val emailPatt =
             ("[a-zA-Z0-9\\+\\%\\-\\+]{1,256}" +
                 "\\@" +
@@ -25,6 +26,19 @@ class CredentialsManager {
     fun isPasswordFilled(passwword: String): Boolean{
         return passwword.isNotEmpty()
     }
+
+    fun register(email:String, passwword: String) : Result <String>{
+        val case_insensitive_email = email.lowercase()
+        return if (credentials.contains(case_insensitive_email)){
+            Result.failure(Exception("Email is already taken !!"))
+        }
+        else{
+            credentials[case_insensitive_email] = passwword
+            Result.success("Account registered successfully")
+        }
+    }
+
+
 
 
 }
